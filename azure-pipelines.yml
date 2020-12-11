@@ -17,8 +17,13 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
+
       [Environment]::SetEnvironmentVariable("Environment", "MyValue", [System.EnvironmentVariableTarget]::User)      
             
               "split line"
                   [Environment]::GetEnvironmentVariable("Environment")
+                  "try machine"
+                  
+      [Environment]::SetEnvironmentVariable("Environment", "MyValue2", [System.EnvironmentVariableTarget]::Machine)  
         
+                  [Environment]::GetEnvironmentVariable("Environment")
