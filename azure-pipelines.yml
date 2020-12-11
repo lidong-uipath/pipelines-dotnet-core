@@ -19,7 +19,6 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      [Environment]::SetEnvironmentVariable("buildConfiguration", "value1", "User")
-      [Environment]::GetEnvironmentVariable("buildConfiguration", "User")
+      [Environment]::GetEnvironmentVariables()
     failOnStderr: true
     showWarnings: true
