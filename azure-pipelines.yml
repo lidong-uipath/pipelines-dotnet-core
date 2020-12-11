@@ -19,7 +19,7 @@ steps:
     targetType: 'inline'
     script: |
     
-      [Environment]::GetEnvironmentVariable("buildConfiguration")
+      [Environment]::GetEnvironmentVariable("buildConfiguration", "User")
       
       [Environment]::SetEnvironmentVariable("SAUCE_USERNAME", "hahah", "User")
       "firsttry"
