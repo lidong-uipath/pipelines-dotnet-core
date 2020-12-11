@@ -33,6 +33,9 @@ steps:
     script: |
 
       [Environment]::GetEnvironmentVariable("Environment")
+      "by user"
+      [Environment]::GetEnvironmentVariable("Environment" , [System.EnvironmentVariableTarget]::User)
+     
       
     failOnStderr: true
     showWarnings: true
