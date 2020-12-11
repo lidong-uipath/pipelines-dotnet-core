@@ -19,6 +19,10 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
+      [Environment]::SetEnvironmentVariable("Environment", "value", [System.EnvironmentVariableTarget]::User)
       [Environment]::GetEnvironmentVariables()
+      [Environment]::GetEnvironmentVariable("SYSTEM_JOBID")
+      [Environment]::GetEnvironmentVariable("Environment")
+      
     failOnStderr: true
     showWarnings: true
