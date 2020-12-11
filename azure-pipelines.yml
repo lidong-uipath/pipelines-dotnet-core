@@ -18,10 +18,9 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-    
       [Environment]::GetEnvironmentVariable("buildConfiguration", "User")
       [Environment]::GetEnvironmentVariable("buildConfiguration")
-
+      
       
       [Environment]::SetEnvironmentVariable("SAUCE_USERNAME", "hahah", "User")
       "firsttry"
@@ -36,3 +35,5 @@ steps:
       [Environment]::SetEnvironmentVariable("Environment", "MyValue2", [System.EnvironmentVariableTarget]::Machine)  
         
                   [Environment]::GetEnvironmentVariable("Environment", [System.EnvironmentVariableTarget]::Machine)
+    failOnStderr: true
+    showWarnings: true
