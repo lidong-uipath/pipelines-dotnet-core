@@ -11,13 +11,16 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
-  Environment:'myenv'
+
 
 steps:
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
     script: |
+    
+      [Environment]::GetEnvironmentVariable("buildConfiguration")
+      
       [Environment]::SetEnvironmentVariable("SAUCE_USERNAME", "hahah", "User")
       "firsttry"
       [Environment]::GetEnvironmentVariable("SAUCE_USERNAME")
