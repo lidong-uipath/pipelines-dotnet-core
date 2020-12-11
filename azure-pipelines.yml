@@ -19,11 +19,11 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      [Environment]::SetEnvironmentVariable("Environment", "value")
-      [Environment]::GetEnvironmentVariables()
-      [Environment]::GetEnvironmentVariable("SYSTEM_JOBID")
+
+      Write-Host "Making the sauceUsername available as an environment variable."
+      Write-Host "##vso[task.setvariable variable=Environment;]abcd"
       [Environment]::GetEnvironmentVariable("Environment")
-      
+
     failOnStderr: true
     showWarnings: true
 
