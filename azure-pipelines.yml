@@ -20,11 +20,13 @@ steps:
     script: |
     
       [Environment]::GetEnvironmentVariable("buildConfiguration", "User")
+      [Environment]::GetEnvironmentVariable("buildConfiguration")
+
       
       [Environment]::SetEnvironmentVariable("SAUCE_USERNAME", "hahah", "User")
       "firsttry"
-      [Environment]::GetEnvironmentVariable("SAUCE_USERNAME")
-      
+      $val = [Environment]::GetEnvironmentVariable("SAUCE_USERNAME", "User")
+      $val
       [Environment]::SetEnvironmentVariable("Environment", "MyValue", [System.EnvironmentVariableTarget]::User)      
             
               "split line"
