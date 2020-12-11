@@ -14,26 +14,12 @@ variables:
 
 
 steps:
+
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
     script: |
+      [Environment]::SetEnvironmentVariable("buildConfiguration", "value1", "User")
       [Environment]::GetEnvironmentVariable("buildConfiguration", "User")
-      [Environment]::GetEnvironmentVariable("buildConfiguration")
-      
-      
-      [Environment]::SetEnvironmentVariable("SAUCE_USERNAME", "hahah", "User")
-      "firsttry"
-      $val = [Environment]::GetEnvironmentVariable("SAUCE_USERNAME", "User")
-      $val
-      [Environment]::SetEnvironmentVariable("Environment", "MyValue", [System.EnvironmentVariableTarget]::User)      
-            
-              "split line"
-                  [Environment]::GetEnvironmentVariable("Environment", [System.EnvironmentVariableTarget]::User)
-                  "try machine"
-                  
-      [Environment]::SetEnvironmentVariable("Environment", "MyValue2", [System.EnvironmentVariableTarget]::Machine)  
-        
-                  [Environment]::GetEnvironmentVariable("Environment", [System.EnvironmentVariableTarget]::Machine)
     failOnStderr: true
     showWarnings: true
