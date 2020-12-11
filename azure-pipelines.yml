@@ -17,7 +17,9 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-
+      [Environment]::SetEnvironmentVariable("SAUCE_USERNAME", "hahah", "User")
+      "firsttry"
+      [Environment]::GetEnvironmentVariable("SAUCE_USERNAME")
       [Environment]::SetEnvironmentVariable("Environment", "MyValue", [System.EnvironmentVariableTarget]::User)      
             
               "split line"
