@@ -30,9 +30,9 @@ steps:
       [Environment]::SetEnvironmentVariable("Environment", "MyValue", [System.EnvironmentVariableTarget]::User)      
             
               "split line"
-                  [Environment]::GetEnvironmentVariable("Environment")
+                  [Environment]::GetEnvironmentVariable("Environment", [System.EnvironmentVariableTarget]::User)
                   "try machine"
                   
       [Environment]::SetEnvironmentVariable("Environment", "MyValue2", [System.EnvironmentVariableTarget]::Machine)  
         
-                  [Environment]::GetEnvironmentVariable("Environment")
+                  [Environment]::GetEnvironmentVariable("Environment", [System.EnvironmentVariableTarget]::Machine)
