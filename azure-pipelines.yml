@@ -11,6 +11,7 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
+  Environment:'myenv'
 
 steps:
 - task: PowerShell@2
@@ -20,6 +21,7 @@ steps:
       [Environment]::SetEnvironmentVariable("SAUCE_USERNAME", "hahah", "User")
       "firsttry"
       [Environment]::GetEnvironmentVariable("SAUCE_USERNAME")
+      
       [Environment]::SetEnvironmentVariable("Environment", "MyValue", [System.EnvironmentVariableTarget]::User)      
             
               "split line"
