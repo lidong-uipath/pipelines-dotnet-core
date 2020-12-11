@@ -17,7 +17,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      [Environment]::SetEnvironmentVariable("Environment", "${{ parameters.Environment }}", [System.EnvironmentVariableTarget]::User)      
+      [Environment]::SetEnvironmentVariable("Environment", "MyValue", [System.EnvironmentVariableTarget]::User)      
             
               "split line"
                   [Environment]::GetEnvironmentVariable("Environment")
